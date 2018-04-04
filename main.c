@@ -41,3 +41,45 @@ else{
 		//Makefile
 		asprintf(&cmd, "touch %s/%s", projectName, "Makefile");
 		system(cmd);
+//get language
+		bool langspecified = 0;
+		char lang[10] = "";
+		int i;			
+		for(i = 2; i < argc; i++){
+			if(strcmp(argv[i], "-c") == 0){
+				if(langspecified == 1){
+					printf("Syntax error: language already specified\n");
+					return 1;
+				}
+				strcpy(lang, argv[i]);
+				langspecified = 1;				
+			} else if(strcmp(argv[i], "-cpp") == 0){
+				if(langspecified == 1){
+					printf("Syntax error: language already specified\n");
+					return 1;
+				}
+				strcpy(lang, argv[i]);
+				langspecified = 1;				
+			} else if(strcmp(argv[i], "-py") == 0){
+				if(langspecified == 1){
+					printf("Syntax error: language already specified\n");
+					return 1;
+				}
+				strcpy(lang, argv[i]);
+				langspecified = 1;					
+			} else if(strcmp(argv[i], "-Latex") == 0){
+				if(langspecified == 1){
+					printf("Syntax error: language already specified\n");
+					return 1;
+				}
+				strcpy(lang, argv[i]);
+				langspecified = 1;					
+			} else if(strcmp(argv[i], "-BEAMER") == 0){
+				if(langspecified == 1){
+					printf("Syntax error: language already specified\n");
+					return 1;
+				}
+				strcpy(lang, argv[i]);
+				langspecified = 1;					
+			}
+		}
